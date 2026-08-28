@@ -690,6 +690,7 @@
     bank:['M4 10h16','M4 10L12 4l8 6','M6 10v7','M10 10v7','M14 10v7','M18 10v7','M3 20h18'],
     folio:['M9 4L7 20','M17 4l-2 16','M4 9h16','M3 15h16'],
     flame:['M12 3c.6 3 3 4.3 3 7.5 0 1.4-.7 2.4-1.6 2.9.5-1.3.2-2.7-.9-3.7.2 2-1.4 3-2.4 4.2C10.9 21 15 21 15 21c3.3 0 5-2.3 5-5.2 0-3.6-2.6-5.6-4.2-7.1C13.8 6.9 12.7 5 12 3z']
+  };
   function icon(name,size){ size=size||20; var fill=(name==='play'); var subs=ICONS[name]||['']; var paths=subs.map(function(d){return '<path d="'+d+'"/>';}).join('');
     return '<svg viewBox="0 0 24 24" width="'+size+'" height="'+size+'" fill="'+(fill?'currentColor':'none')+'" stroke="'+(fill?'none':'currentColor')+'" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">'+paths+'</svg>'; }
   function fillIcons(root){ (root||document).querySelectorAll('[data-icon]').forEach(function(el){ if(el.getAttribute('data-filled')) return; el.innerHTML=icon(el.getAttribute('data-icon'),parseInt(el.getAttribute('data-size')||'20',10)); el.setAttribute('data-filled','1'); el.style.display='inline-flex'; }); }
