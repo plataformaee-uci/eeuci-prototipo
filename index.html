@@ -489,7 +489,7 @@
           <p>Del potencial de la célula hasta la lectura en el monitor. Cardiología · Clase 1 de 2.</p>
           <div class="metaline"><span class="pill">CARDIOLOGÍA</span><span>Clase 1 de 2</span><span>·</span><span>Visto 60%</span></div>
           <div class="fbtns">
-            <button class="btn btn-red" onclick="openLesson('Electro: de la célula al monitor','Cardiología','','heart','#B23A48')"><span data-icon="play" data-size="17"></span> Continuar</button>
+            <button class="btn btn-red" onclick="openLesson('Electro: de la célula al monitor','Cardiología','','heart','#B23A48','11KuHFyNlsC6kmyEm2m5ZIDSxcOG-HSJZ')"><span data-icon="play" data-size="17"></span> Continuar</button>
             <button class="btn btn-ghost" onclick="scrollToId('especialidades')">Ver especialidades</button>
           </div>
         </div>
@@ -515,6 +515,7 @@
         <div>
           <div class="stage">
             <canvas id="playerCanvas"></canvas>
+            <iframe id="playerFrame" title="Reproductor de clase" allow="autoplay; fullscreen" allowfullscreen style="position:absolute;inset:0;width:100%;height:100%;border:0;display:none;z-index:4;background:#000"></iframe>
             <div class="overlay">
               <div class="toprow">
                 <span class="lockpill"><span data-icon="lock" data-size="14"></span> Reproducción protegida · carlos@ee-uci</span>
@@ -697,36 +698,36 @@
 
   var SPECS = [
     { name:'Cardiología', color:'#B23A48', ic:'heart', lessons:[
-      {t:'Electro: de la célula al monitor', d:'', tag:'Nueva'},
-      {t:'Vasopresores', d:'', tag:''} ]},
+      {t:'Electro: de la célula al monitor', d:'', tag:'Nueva', v:'11KuHFyNlsC6kmyEm2m5ZIDSxcOG-HSJZ'},
+      {t:'Vasopresores', d:'', tag:'', v:'1wgSCJk_cHN4fnEMxT6SP1mzVO224N9yw'} ]},
     { name:'Neumología', color:'#2F6E8F', ic:'lungs', lessons:[
-      {t:'Parámetros básicos de ventilación', d:'', tag:''},
-      {t:'Manejo de traqueostomía', d:'', tag:''},
-      {t:'Sello de agua', d:'', tag:''},
-      {t:'Caso clínico: SDRA', d:'', tag:'Nueva'} ]},
+      {t:'Parámetros básicos de ventilación', d:'', tag:'', v:'16cqZJ5QvjN3Oe5WE_rr5X2UxX6BjAoWD'},
+      {t:'Manejo de traqueostomía', d:'', tag:'', v:'1qObDRKD6LMdbIT93BNt1MeZqMmCEAf1n'},
+      {t:'Sello de agua', d:'', tag:'', v:'18vczek23b6w8oFg_LmWlo-PoTTlX9sHJ'},
+      {t:'Caso clínico: SDRA', d:'', tag:'Nueva', v:'1AMpQ4-WRwRwtLLvxxYmkLECd_ugm0aUe'} ]},
     { name:'Neurología', color:'#6D5BA8', ic:'brain', lessons:[
-      {t:'Neuroanatomía y valoración neurológica', d:'', tag:''},
-      {t:'Fisiología del SNC', d:'', tag:''},
-      {t:'Patologías del SNC — Parte 1', d:'', tag:''},
-      {t:'Patologías del SNC — Parte 2', d:'', tag:''},
-      {t:'Traumatismo craneoencefálico (TCE)', d:'', tag:'Nueva'} ]},
+      {t:'Neuroanatomía y valoración neurológica', d:'', tag:'', v:'1i5I2NlU3_CdMxZPfvbcdIId8xJwnnMmN'},
+      {t:'Fisiología del SNC', d:'', tag:'', v:'1qN1nXqJZDEkud6Xi9uzG6s1y80exQtV9'},
+      {t:'Patologías del SNC — Parte 1', d:'', tag:'', v:'1skmgpij7bgZ8rwxa_wMugvqA6YCE2URZ'},
+      {t:'Patologías del SNC — Parte 2', d:'', tag:'', v:'1qnBya7Tm0uPlYwx-iDeCOM4s9V0by-5-'},
+      {t:'Traumatismo craneoencefálico (TCE)', d:'', tag:'Nueva', v:'1bywltOFYxTGhNKv0KtdzeglrZL0qi-Z0'} ]},
     { name:'Nefrología', color:'#2E7D8A', ic:'kidney', lessons:[
-      {t:'Regulación ácido-base — Parte 1', d:'', tag:''},
-      {t:'Equilibrio ácido-base — Parte 2', d:'', tag:'Nueva'} ]},
+      {t:'Regulación ácido-base — Parte 1', d:'', tag:'', v:'1h6y1NJQpgDv7wbfJXwtv-6IBw5YRIW54'},
+      {t:'Equilibrio ácido-base — Parte 2', d:'', tag:'Nueva', v:'1JDvWhoWrk_DNgN96edbu38SNfG4WY_KM'} ]},
     { name:'Quemados', color:'#C0562A', ic:'flame', lessons:[
-      {t:'Atención del paciente quemado: primeras 24 horas', d:'', tag:'Nueva'},
-      {t:'Hemodinamia del quemado — Parte 1', d:'', tag:''},
-      {t:'Hemodinamia del quemado — Parte 2', d:'', tag:''},
-      {t:'Shock en el quemado', d:'', tag:''},
-      {t:'Uso de albúmina en el quemado', d:'', tag:''},
-      {t:'Criterios de referencia', d:'', tag:''},
-      {t:'Quemados pediátricos', d:'', tag:''} ]},
+      {t:'Atención del paciente quemado: primeras 24 horas', d:'', tag:'Nueva', v:'1gq9UYBh0rthQ2fLty5SaUG8qK5HX-9sr'},
+      {t:'Hemodinamia del quemado — Parte 1', d:'', tag:'', v:'1AHixm_3gGK0qYAIYGPHi3EIToJRgyjnW'},
+      {t:'Hemodinamia del quemado — Parte 2', d:'', tag:'', v:'1lnKgOmkNcTKxP4qpIwFVbqdZMuUj3AHZ'},
+      {t:'Shock en el quemado', d:'', tag:'', v:'1ZfbbjPYtOsTfe4D0HtTdUtgrVs6Ch-VR'},
+      {t:'Uso de albúmina en el quemado', d:'', tag:'', v:'1Jm1Ha0Ro5Hh-MpW897FboBURIj5VFP3B'},
+      {t:'Criterios de referencia', d:'', tag:'', v:'1wFSJm2t-ChS26BOZ_cIfIPlfbP_l2fJ1'},
+      {t:'Quemados pediátricos', d:'', tag:'', v:'1Oob5pTfBsrdFU5scqSiRZpmDOrPC-ldz'} ]},
     { name:'Misceláneos', color:'#5A6B84', ic:'grid', lessons:[
-      {t:'Accesos vasculares', d:'', tag:''},
-      {t:'Primeros auxilios', d:'', tag:''},
-      {t:'Electrolitos', d:'', tag:''},
-      {t:'Valoración primaria y secundaria', d:'', tag:''},
-      {t:'Generalidades del trauma', d:'', tag:''} ]}
+      {t:'Accesos vasculares', d:'', tag:'', v:'1_JTspmkWxhTMYm-Oz1IJIntf8m3Vtpo9'},
+      {t:'Primeros auxilios', d:'', tag:'', v:'1A4dcxhPki1F2OgC78-aiJh-Hwq-LMrmr'},
+      {t:'Electrolitos', d:'', tag:'', v:'1k_10mQ1HtR642CRgxCtEDkoCOtz5Qx2_'},
+      {t:'Valoración primaria y secundaria', d:'', tag:'', v:'1rosq_cYLeQ0v7kPWItjpBr2MSfIrPl2w'},
+      {t:'Generalidades del trauma', d:'', tag:'', v:'17SPKtyKm9kbKYcI8XrzhNSpKO9EBY029'} ]}
   ];
 
   var BUCKETS = [
@@ -736,16 +737,16 @@
   ];
 
   var WORKSHOPS = [
-    {t:'Taxonomía en la Ventilación Mecánica', desc:'Clasifica, comprende y aplica la taxonomía de la ventilación mecánica en tu práctica diaria. Curso en 2 partes.', dur:'2 partes', spec:'Neumología'},
-    {t:'Manejo de Línea Arterial', desc:'Monitoreo invasivo para decisiones que salvan vidas: montaje, calibración e interpretación. Curso en 2 partes.', dur:'2 partes', spec:'Cardiología'},
-    {t:'PALS — Soporte Vital Avanzado Pediátrico', desc:'Reanimación avanzada en el paciente pediátrico crítico. Curso en 2 partes.', dur:'2 partes', spec:'Urgencias'}
+    {t:'Taxonomía en la Ventilación Mecánica', desc:'Clasifica, comprende y aplica la taxonomía de la ventilación mecánica en tu práctica diaria. Curso en 2 partes.', dur:'2 partes', spec:'Neumología', v:'1AIp_7MiNlsI2xfkmjXQIEIoWD2udMYy4'},
+    {t:'Manejo de Línea Arterial', desc:'Monitoreo invasivo para decisiones que salvan vidas: montaje, calibración e interpretación. Curso en 2 partes.', dur:'2 partes', spec:'Cardiología', v:'1Q3uPF4zJAprwf9Sce1lNfjCDSZOFDXIc'},
+    {t:'PALS — Soporte Vital Avanzado Pediátrico', desc:'Reanimación avanzada en el paciente pediátrico crítico. Curso en 2 partes.', dur:'2 partes', spec:'Urgencias', v:'1RXMjtDBPUJ6nw6lLzm83A5b0ZW95Ji57'}
   ];
 
   var LIVE = [
     {date:'Jueves 28 de agosto, 2026', theme:'Manejo de traqueostomía', spec:'Neumología', color:'#2F6E8F', time:'17:00–19:00', status:'next'},
     {date:'Jueves 4 de septiembre, 2026', theme:'Traumatismo craneoencefálico (TCE)', spec:'Neurología', color:'#6D5BA8', time:'17:00–19:00', status:'next'},
     {date:'Jueves 11 de septiembre, 2026', theme:'Shock en el quemado', spec:'Quemados', color:'#C0562A', time:'17:00–19:00', status:'sched'},
-    {date:'Jueves 21 de agosto, 2026', theme:'Electro: de la célula al monitor', spec:'Cardiología', color:'#B23A48', time:'17:00–19:00', status:'rec'}
+    {date:'Jueves 21 de agosto, 2026', theme:'Electro: de la célula al monitor', spec:'Cardiología', color:'#B23A48', time:'17:00–19:00', status:'rec', v:'11KuHFyNlsC6kmyEm2m5ZIDSxcOG-HSJZ'}
   ];
 
   var CERTS = [
@@ -780,7 +781,7 @@
       + (ls.d ? '<span class="dur">'+ls.d+'</span>' : '')+pr+'</div>';
   }
   function cardHTML(m, ls, prog){
-    return '<div class="card" onclick="EEUCI.open(\''+esc(ls.t)+'\',\''+esc(m.name)+'\',\''+ls.d+'\',\''+m.ic+'\',\''+m.color+'\')">'
+    return '<div class="card" onclick="EEUCI.open(\''+esc(ls.t)+'\',\''+esc(m.name)+'\',\''+ls.d+'\',\''+m.ic+'\',\''+m.color+'\',\''+(ls.v||'')+'\')">'
       + posterHTML(m,ls,prog)
       + '<div class="meta"><div class="mod" style="color:'+m.color+'">'+m.name+'</div><h4>'+ls.t+'</h4></div></div>';
   }
@@ -814,7 +815,7 @@
         + '<div>'+icon('award',18)+'<div><small>Constancia</small><b>Opcional · $150</b></div></div>'
         + '</div><div class="avalmini">'+icon('shield',15)+' Avalado por CEFCE · Health Professions</div>'
         + '<div class="foot"><span class="free">Incluido</span>'
-        + '<button class="btn btn-ghost" onclick="return false">'+icon('play',15)+' Ver taller</button>'
+        + '<button class="btn btn-ghost" onclick="EEUCI.open(\''+esc(w.t)+'\',\''+esc(w.spec)+'\',\'\',\'monitor\',\'#16406F\',\''+(w.v||'')+'\')">'+icon('play',15)+' Ver taller</button>'
         + '<button class="btn btn-red" onclick="return false">'+icon('award',15)+' Constancia $150</button></div></div></div>';
     }).join('');
   }
@@ -823,7 +824,7 @@
       var badge, btn;
       if (l.status==='next'){ badge='<span class="live-badge next">Próxima</span>'; btn='<button class="btn btn-red" onclick="return false">'+icon('video',16)+' Entrar a Zoom</button>'; }
       else if (l.status==='sched'){ badge='<span class="live-badge next">Programada</span>'; btn='<button class="btn btn-ghost" onclick="return false">'+icon('calendar',16)+' Agendar recordatorio</button>'; }
-      else { badge='<span class="live-badge rec">Grabación</span>'; btn='<button class="btn btn-ghost" onclick="EEUCI.open(\''+esc(l.theme)+'\',\''+esc(l.spec)+'\',\'—\',\'monitor\',\''+l.color+'\')">'+icon('play',16)+' Ver grabación</button>'; }
+      else { badge='<span class="live-badge rec">Grabación</span>'; btn='<button class="btn btn-ghost" onclick="EEUCI.open(\''+esc(l.theme)+'\',\''+esc(l.spec)+'\',\'\',\'monitor\',\''+l.color+'\',\''+(l.v||'')+'\')">'+icon('play',16)+' Ver grabación</button>'; }
       return '<div class="live-card"><div class="lc-top">'+badge+'<span class="date">'+l.date+'</span></div>'
         + '<div><span class="spec" style="color:'+l.color+'">'+l.spec+'</span><h3>'+l.theme+'</h3></div>'
         + '<div class="lc-info"><span>'+icon('clock',16)+' '+l.time+'</span><span>'+icon('wifi',16)+' 100% virtual</span></div>'
@@ -859,7 +860,7 @@
     renderConsList();
   }
 
-  function openLesson(title, modName, dur, ic, color){
+  function openLesson(title, modName, dur, ic, color, vid){
     document.getElementById('lTitle').textContent = title;
     var lm = document.getElementById('lMod'); lm.textContent = modName; lm.style.color = color;
     document.getElementById('lDur').textContent = (dur && dur!=='—' ? dur+' min' : 'Clase en video');
@@ -871,14 +872,22 @@
       document.getElementById('plCount').textContent = mod.lessons.length+' clases';
       mod.lessons.forEach(function(ls,j){
         var active = ls.t===title ? ' active':'';
-        items += '<div class="pl-item'+active+'" onclick="EEUCI.open(\''+esc(ls.t)+'\',\''+esc(mod.name)+'\',\''+ls.d+'\',\''+mod.ic+'\',\''+mod.color+'\')">'
+        items += '<div class="pl-item'+active+'" onclick="EEUCI.open(\''+esc(ls.t)+'\',\''+esc(mod.name)+'\',\''+ls.d+'\',\''+mod.ic+'\',\''+mod.color+'\',\''+(ls.v||'')+'\')">'
           + '<div class="n">'+(j+1)+'</div><div><div class="pt">'+ls.t+'</div>'+(ls.d?'<div class="pd">'+ls.d+' min</div>':'')+'</div></div>';
       });
     } else { document.getElementById('plCount').textContent=''; }
     document.getElementById('plItems').innerHTML = items;
     playerColor = color;
+    setVideo(vid);
     go('player');
-    setTimeout(function(){ sizeCanvas(); if(!playing) drawStatic(); }, 30);
+    setTimeout(function(){ if(!vid){ sizeCanvas(); if(!playing) drawStatic(); } }, 30);
+  }
+  function setVideo(vid){
+    var frame=document.getElementById('playerFrame');
+    var canvas=document.getElementById('playerCanvas');
+    var overlay=document.querySelector('#view-player .overlay');
+    if(vid){ if(frame){ frame.src='https://drive.google.com/file/d/'+vid+'/preview'; frame.style.display='block'; } if(canvas) canvas.style.display='none'; if(overlay) overlay.style.display='none'; }
+    else { if(frame){ frame.style.display='none'; frame.src=''; } if(canvas) canvas.style.display='block'; if(overlay) overlay.style.display='flex'; }
   }
 
   function go(view){
@@ -921,7 +930,7 @@
   function drawStatic(){ if(!pctx) return; sizeCanvas(); drawGrid(); drawTrace(); }
   function pframe(){ drawGrid(); drawTrace(); pOff+=2.2; if(playing) pRaf=requestAnimationFrame(pframe); }
   function startPlayer(){ if(!pctx) return; sizeCanvas(); drawGrid(); drawTrace(); }
-  function stopPlayer(){ playing=false; if(pRaf){cancelAnimationFrame(pRaf);pRaf=null;} if(vitTimer){clearInterval(vitTimer);vitTimer=null;} setPlayIcon(false); }
+  function stopPlayer(){ playing=false; if(pRaf){cancelAnimationFrame(pRaf);pRaf=null;} if(vitTimer){clearInterval(vitTimer);vitTimer=null;} setPlayIcon(false); var f=document.getElementById('playerFrame'); if(f){ f.style.display='none'; f.src=''; } }
   function togglePlay(){ playing=!playing; setPlayIcon(playing);
     if(playing){ if(reduce){drawGrid();drawTrace();} else if(!pRaf){pframe();} document.getElementById('bigplay').style.opacity='0.12';
       vitTimer=setInterval(function(){ document.getElementById('vitHr').textContent=72+Math.floor(Math.random()*10); },900); animateTimeline();
